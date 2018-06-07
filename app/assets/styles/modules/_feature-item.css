@@ -1,10 +1,9 @@
 .feature-item {
   position: relative;
-
   padding-bottom: 2.5rem;
 
   @mixin atSmall {
-    padding-left: 5.875rem;
+    padding-left: 94px;
   }
 
   &__icon {
@@ -26,8 +25,8 @@
 
     @mixin atSmall {
       text-align: left;
-      font-size: 1.875rem;
       margin-top: 1em;
+      font-size: 1.875rem;
     }
   }
 }
