@@ -1,1 +1,1 @@
-alert('ciao');
+aler('ciao');
