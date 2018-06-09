@@ -5,7 +5,8 @@
   "main": "app.js",
   "dependencies": {
     "gulp": "^3.9.1",
-    "normalize.css": "^8.0.0"
+    "normalize.css": "^8.0.0",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^8.6.0",
