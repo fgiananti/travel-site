@@ -1048,6 +1048,10 @@ a {
   }
   }
 
+.site-header__menu-content--is-visible {
+      display: block;
+    }
+
 .primary-nav ul {
     margin: 0;
     padding: 0;
