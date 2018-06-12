@@ -29,6 +29,20 @@
     }
   }
 
+  &__menu-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    background-color: white;
+    position: absolute;
+    z-index: 10;
+    top: 0.625rem;
+    right: 0.625rem;
+
+    @mixin atMedium {
+      display: none;
+    }
+  }
+
   &__menu-content {
     opacity: 0;
     position: relative;
@@ -41,5 +55,14 @@
       z-index: 1;
       padding-top: 0;
     }
+
+    &--is-visible {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+
+  &--is-expanded {
+    background-color: rgba($mainBlue, 0.3);
   }
 }
