@@ -9,6 +9,14 @@
     padding-right: 65px;
   }
 
+  &--gutters-small {
+    margin-right: -45px;
+  }
+
+  &--gutters-small > div {
+    padding-right: 45px;
+  }
+
   &--gutters-large {
     margin-right: -100px;
   }
@@ -47,6 +55,23 @@
 
     &__medium-8--smaller {
       width: 63%;
+    }
+  }
+
+  @mixin atLarge {
+    &__large-4 {
+      float: left;
+      width: 33.33%;
+    }
+  }
+
+  &--flexbox-at-large {
+    @mixin atLarge {
+      display: flex;
+    }
+
+    & > div {
+      display: flex;
     }
   }
 }
