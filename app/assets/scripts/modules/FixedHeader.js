@@ -6,36 +6,38 @@ class FixedHeader {
   constructor() {
     this.headerTriggerElement = document.querySelector('.large-hero__title');
     this.siteHeader = document.querySelector('.site-header');
-    this.siteHeaderLogo = document.querySelector('.site-header__logo')
+    this.siteHeaderLogo = document.querySelector('.site-header__logo');
     this.createHeaderWaypoint();
     this.pageSection = document.querySelectorAll('.page-section');
     this.headerLinks = document.querySelectorAll('.primary-nav a');
     this.createSectionWaypoints();
     this.addSmoothScrolling();
+    this.lazyImages = document.querySelectorAll('.lazyload');
+    this.refreshWaypoints();
   }
 
   createHeaderWaypoint() {
     const that = this;
-    new Waypoint ({
+    new Waypoint({
       element: this.headerTriggerElement,
-      handler: (direction) => {
+      handler: direction => {
         if (direction == 'down') {
-          that.siteHeader.classList.add('site-header--dark')
-          that.siteHeaderLogo.classList.add('site-header__logo--small')
+          that.siteHeader.classList.add('site-header--dark');
+          that.siteHeaderLogo.classList.add('site-header__logo--small');
         } else {
-          that.siteHeader.classList.remove('site-header--dark')
-          that.siteHeaderLogo.classList.remove('site-header__logo--small')
+          that.siteHeader.classList.remove('site-header--dark');
+          that.siteHeaderLogo.classList.remove('site-header__logo--small');
         }
       }
-    })
+    });
   }
 
   createSectionWaypoints() {
     const that = this;
     this.pageSection.forEach(section => {
-      new Waypoint ({
+      new Waypoint({
         element: section,
-        handler: (direction) => {
+        handler: direction => {
           if (direction == 'down') {
             that.headerLinks.forEach(link => {
               link.classList.remove('is-current-link');
@@ -55,9 +57,9 @@ class FixedHeader {
         offset: '18%'
       });
 
-      new Waypoint ({
+      new Waypoint({
         element: section,
-        handler: (direction) => {
+        handler: direction => {
           if (direction == 'up') {
             that.headerLinks.forEach(link => {
               link.classList.remove('is-current-link');
@@ -76,8 +78,7 @@ class FixedHeader {
         },
         offset: '-40%'
       });
-
-    })
+    });
   }
 
   addSmoothScrolling() {
@@ -86,6 +87,13 @@ class FixedHeader {
     });
   }
 
+  refreshWaypoints() {
+    this.lazyImages.forEach(image => {
+      image.addEventListener('load', () => {
+        Waypoint.refreshAll();
+      });
+    });
+  }
 }
 
 export default FixedHeader;

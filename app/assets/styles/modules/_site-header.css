@@ -32,6 +32,10 @@
     }
   }
 
+  &__logo__graphic {
+    text-indent: -9999px;
+  }
+
   &__btn--container {
     @mixin atMedium {
       float: right;

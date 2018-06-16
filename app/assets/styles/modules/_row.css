@@ -65,7 +65,7 @@
     }
   }
 
-  &--flexbox-at-large {
+  .flexbox &--flexbox-at-large {
     @mixin atLarge {
       display: flex;
     }
